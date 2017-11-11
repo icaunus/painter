@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { MenuComponent } from './menu/menu.component';
+// import { MenuComponent } from './menu/menu.component';
 import { ShapesComponent } from './shapes/shapes.component';
 import { DrawAreaComponent } from './drawarea/drawarea.component';
 import { StatusBarComponent } from './statusbar/statusbar.component';
@@ -10,7 +10,7 @@ import { StatusBarComponent } from './statusbar/statusbar.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
+    // MenuComponent,
     ShapesComponent,
     DrawAreaComponent,
     StatusBarComponent
