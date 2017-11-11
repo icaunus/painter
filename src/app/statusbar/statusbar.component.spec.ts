@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StatusbarComponent } from './statusbar.component';
+import { StatusBarComponent } from './statusbar.component';
 
-describe('StatusbarComponent', () => {
-  let component: StatusbarComponent;
-  let fixture: ComponentFixture<StatusbarComponent>;
+describe('StatusBarComponent', () => {
+  let component: StatusBarComponent;
+  let fixture: ComponentFixture<StatusBarComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StatusbarComponent ]
+      declarations: [ StatusBarComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StatusbarComponent);
+    fixture = TestBed.createComponent(StatusBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
