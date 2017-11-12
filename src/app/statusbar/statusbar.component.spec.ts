@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { StatusBarComponent } from './statusbar.component';
 
-describe('StatusBarComponent', () => {
+describe('StatusbarComponent', () => {
   let component: StatusBarComponent;
   let fixture: ComponentFixture<StatusBarComponent>;
 

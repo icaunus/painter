@@ -1,7 +1,12 @@
-shapes {
-  float: left;
-  width: 9%;
-  height: 94%;
+div.shapes {
+  width: 100px;
+  height: 600px;
   margin: 1px;
   background-color: orange;
 }
+.btn { 
+  width: 8px;
+  height: 8px;
+}
+.leftbtn { float: left; }
+.rightbtn { float: right; }

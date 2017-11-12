@@ -1,0 +1,8 @@
+.sd {
+  display: flex;
+  flex-direction: row;
+  height: 94%;
+}
+shapes {
+  height: 99%;
+}
