@@ -13,7 +13,7 @@ export class ShapesComponent implements OnInit {
   ngOnInit() {
     let circleBtn:HTMLButtonElement = <HTMLButtonElement> document.getElementById("circleBtn");
     let solidLineBtn:HTMLButtonElement = <HTMLButtonElement> document.getElementById("solidLineBtn");
-    let dashedLineBtn:HTMLButtonElement = <HTMLButtonElement> document.getElementById("dashedlineBtn");
+    let dashedLineBtn:HTMLButtonElement = <HTMLButtonElement> document.getElementById("dashedLineBtn");
     let dottedLineBtn:HTMLButtonElement = <HTMLButtonElement> document.getElementById("dottedLineBtn");
     let lineType:HTMLInputElement = <HTMLInputElement> document.getElementById("lineType");
 
