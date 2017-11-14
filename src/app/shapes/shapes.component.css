@@ -15,3 +15,8 @@ div.shapes {
   padding: 1px;
   margin: 1px;
 }
+#blackBtn { background-color: black; }
+#blueBtn { background-color: blue; }
+#greenBtn { background-color: green; }
+#redBtn { background-color: red; }
+#whiteBtn { background-color: white; }
