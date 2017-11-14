@@ -22,11 +22,19 @@ export class ShapesComponent implements OnInit {
     let lineDash:HTMLInputElement = <HTMLInputElement> document.getElementById("lineType");
     let canvas:HTMLCanvasElement = <HTMLCanvasElement> document.getElementById("painterCanvas");
     let context = canvas.getContext("2d"); 
+    let printCoordinates = (event) => {
+      var oldX = event.clientX;
+      var oldY = event.clientY;
+      var statusBar = document.getElementById("statusBar");
+
+      statusBar.innerHTML = oldX + ", " + oldY;
+    };
 
     circleBtn.addEventListener("click", function(event) {
       var oldX = event.clientX;
       var oldY = event.clientY;
-
+       
+      printCoordinates(event);
       context.beginPath();
       context.arc(oldX, oldY, 40,0,2 * Math.PI);
       context.closePath();
@@ -39,6 +47,7 @@ export class ShapesComponent implements OnInit {
       var oldY = event.clientY;
       var newY = oldY + 50;
 
+      printCoordinates(event);
       context.setLineDash([1]);
       context.moveTo(oldX, oldY);
       context.lineTo(newX, newY);
@@ -63,6 +72,7 @@ export class ShapesComponent implements OnInit {
       var oldY = event.clientY;
       var newY = oldY + 50;
 
+      printCoordinates(event);
       context.setLineDash([10, 2]);
       context.moveTo(oldX, oldY);
       context.lineTo(newX, newY);
