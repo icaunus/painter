@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { DrawAreaComponent } from '../drawarea/drawarea.component';
 
 @Component({
   selector: 'shapes',
@@ -7,7 +8,10 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class ShapesComponent implements OnInit {
+  private drawArea:DrawAreaComponent;
+
   constructor() {
+    this.drawArea = new DrawAreaComponent();
   }
 
   ngOnInit() {
@@ -15,22 +19,54 @@ export class ShapesComponent implements OnInit {
     let solidLineBtn:HTMLButtonElement = <HTMLButtonElement> document.getElementById("solidLineBtn");
     let dashedLineBtn:HTMLButtonElement = <HTMLButtonElement> document.getElementById("dashedLineBtn");
     let dottedLineBtn:HTMLButtonElement = <HTMLButtonElement> document.getElementById("dottedLineBtn");
-    let lineType:HTMLInputElement = <HTMLInputElement> document.getElementById("lineType");
+    let lineDash:HTMLInputElement = <HTMLInputElement> document.getElementById("lineType");
+    let canvas:HTMLCanvasElement = <HTMLCanvasElement> document.getElementById("painterCanvas");
+    let context = canvas.getContext("2d"); 
 
     circleBtn.addEventListener("click", function(event) {
-      lineType.value = "circle";
+      var oldX = event.clientX;
+      var oldY = event.clientY;
+
+      context.beginPath();
+      context.arc(oldX, oldY, 40,0,2 * Math.PI);
+      context.closePath();
+      context.stroke();
     });
 
     solidLineBtn.addEventListener("click", function(event) {
-      lineType.value = "solidLine";
+      var oldX = event.clientX;
+      var newX = oldX - 50;
+      var oldY = event.clientY;
+      var newY = oldY + 50;
+
+      context.setLineDash([1]);
+      context.moveTo(oldX, oldY);
+      context.lineTo(newX, newY);
+      context.stroke();
     });
     
     dashedLineBtn.addEventListener("click", function(event) {
-      lineType.value = "dashedline";
+      var oldX = event.clientX;
+      var newX = oldX - 50;
+      var oldY = event.clientY;
+      var newY = oldY + 50;
+
+      context.setLineDash([50, 5]);
+      context.moveTo(oldX, oldY);
+      context.lineTo(newX, newY);
+      context.stroke();
     });
 
     dottedLineBtn.addEventListener("click", function(event) {
-      lineType.value = "dottedLine";
+      var oldX = event.clientX;
+      var newX = oldX - 50;
+      var oldY = event.clientY;
+      var newY = oldY + 50;
+
+      context.setLineDash([10, 2]);
+      context.moveTo(oldX, oldY);
+      context.lineTo(newX, newY);
+      context.stroke();
     });
   }
 }
